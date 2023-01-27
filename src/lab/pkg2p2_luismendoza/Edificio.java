@@ -10,15 +10,16 @@ public class Edificio {
     int pisos;
     int locales;
     String direccion;
+    String estado;
 
     public Edificio() {
     }
-    
 
-    public Edificio(int pisos, int locales, String direccion) {
+    public Edificio(int pisos, int locales, String direccion, String estado) {
         this.pisos = pisos;
         this.locales = locales;
         this.direccion = direccion;
+        this.estado = estado;
     }
 
     public int getPisos() {
@@ -44,6 +45,17 @@ public class Edificio {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+
+    
     
     
     

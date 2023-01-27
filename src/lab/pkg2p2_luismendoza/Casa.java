@@ -16,13 +16,12 @@ public class Casa {
     double largo;
     int bath;
     int cuartos;
+    String estado;
 
     public Casa() {
     }
 
-    
-    
-    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int bath, int cuartos) {
+    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int bath, int cuartos, String estado) {
         this.numeroCasa = numeroCasa;
         this.numeroBloque = numeroBloque;
         this.color = color;
@@ -30,6 +29,7 @@ public class Casa {
         this.largo = largo;
         this.bath = bath;
         this.cuartos = cuartos;
+        this.estado = estado;
     }
 
     public int getNumeroCasa() {
@@ -87,6 +87,18 @@ public class Casa {
     public void setCuartos(int cuartos) {
         this.cuartos = cuartos;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    
+    
+    
 
    
     

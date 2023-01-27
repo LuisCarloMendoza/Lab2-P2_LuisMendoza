@@ -12,14 +12,15 @@ public class Solar {
     
     double ancho;
     double largo;
+    String estado;
 
     public Solar() {
     }
-    
 
-    public Solar(double ancho, double largo) {
+    public Solar(double ancho, double largo, String estado) {
         this.ancho = ancho;
         this.largo = largo;
+        this.estado = estado;
     }
 
     public double getAncho() {
@@ -37,6 +38,17 @@ public class Solar {
     public void setLargo(double largo) {
         this.largo = largo;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
+    
     
     
     
