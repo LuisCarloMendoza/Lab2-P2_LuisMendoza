@@ -40,18 +40,69 @@ public class Lab2P2_LuisMendoza {
     public static Casa addCasa(){
         Scanner entrada = new Scanner(System.in);
         
-        System.out.println("Ingrese el numero");
+        System.out.println("Ingrese el numero de la casa");
         int numeroCasa = entrada.nextInt();
+        System.out.println("Ingrese el numero del bloque");
         int numeroBloque = entrada.nextInt();
+        System.out.println("Ingrese el color de la casa");
         Color color = JColorChooser.showDialog(null, "Elija un color", Color.yellow);
+        System.out.println("Ingrese el ancho de la casa");
         double ancho = entrada.nextDouble();
+        System.out.println("Ingrese el largo de la casa");
         double largo = entrada.nextDouble();
+        System.out.println("Ingrese el numero de baños");
         int bath = entrada.nextInt();
+        System.out.println("Ingrese el numero de habitaciones");
         int cuartos = entrada.nextInt();
+        System.out.println("Ingrese el estado");
         String estado = entrada.next();
         estado += entrada.nextLine();
         
         Casa c = new Casa(numeroCasa,numeroBloque,color,ancho,largo,bath,cuartos,estado);
+        return c;
+        
+    }
+    
+    public static Edificio addEdificio(){
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("Ingrese el numero de pisos");
+        int pisos = entrada.nextInt();
+        
+        System.out.println("Ingrese el numero de locales");
+        int locales = entrada.nextInt();
+        
+        System.out.println("Ingrese la dirección");
+        String cadena = entrada.next();
+        cadena += entrada.nextLine();
+        
+        System.out.println("Ingrese el estado");
+        String cadena2 = entrada.next();
+        cadena2 += entrada.nextLine();
+        
+        Edificio e = new Edificio(pisos,locales,cadena,cadena2);
+        
+        return e;
+        
+        
+    }
+    
+    public static Solar addSolar(){
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("Ingrese el ancho del solar");
+        double ancho = entrada.nextDouble();
+        
+        System.out.println("Ingrese el largo del solar");
+        double largo = entrada.nextDouble();
+        
+        System.out.println("Ingrese el estado del solar");
+        String cadena = entrada.next();
+        cadena += entrada.nextLine();
+        
+        Solar s = new Solar(ancho,largo,cadena);
+        
+        return s;
         
     }
 
