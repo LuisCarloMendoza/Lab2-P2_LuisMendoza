@@ -59,7 +59,7 @@ public class Lab2P2_LuisMendoza {
         String estado = entrada.next();
         estado += entrada.nextLine();
         
-        Casa c = new Casa(numeroCasa,numeroBloque,color,ancho,largo,bath,cuartos,estado,null);
+        Casa c = new Casa(numeroCasa,numeroBloque,color,ancho,largo,bath,cuartos,estado,"");
         return c;
         
     }
@@ -81,7 +81,7 @@ public class Lab2P2_LuisMendoza {
         String cadena2 = entrada.next();
         cadena2 += entrada.nextLine();
         
-        Edificio e = new Edificio(pisos,locales,cadena,cadena2,null);
+        Edificio e = new Edificio(pisos,locales,cadena,cadena2,"");
         
         return e;
         
@@ -101,7 +101,7 @@ public class Lab2P2_LuisMendoza {
         String cadena = entrada.next();
         cadena += entrada.nextLine();
         
-        Solar s = new Solar(ancho,largo,cadena,null);
+        Solar s = new Solar(ancho,largo,cadena,"");
         
         return s;
         
@@ -119,7 +119,7 @@ public class Lab2P2_LuisMendoza {
         
         Usuario admin = new Usuario("Administrador", 55, "admin","admin1234");
         
-        
+        int z =0;
         int opcion = 0;
         
         ArrayList propiedades = new ArrayList();
@@ -137,21 +137,24 @@ public class Lab2P2_LuisMendoza {
 
                 opcion = sc.nextInt();
 
-                if (opcion == 1 && (usuarios.size() > 1)) {
+                if (opcion == 1) {
                     
                     Usuario currentUser = new Usuario("lol", 175, "lol","lol");
                     
                     int opcion2 = 0;
                     
                     System.out.println("Ingrese el Username");
-                    String user = sc.nextLine();
+                    String user = sc.next();
+                    user += sc.nextLine();
                     
                     System.out.println("Ingrese el Password");
-                    String pass = sc.nextLine();
+                    String pass = sc.next();
+                    pass += sc.nextLine();
                     
                     for (int i = 0; i < usuarios.size(); i++) {
                         if(usuarios.get(i).getUsername().equalsIgnoreCase(user) && usuarios.get(i).getPassword().equalsIgnoreCase(pass)){
                             System.out.println("Te haz log in " + usuarios.get(i).getNombre());
+                            z = i;
                             currentUser = usuarios.get(i);
      
                         } else if(usuarios.get(i).getUsername().equalsIgnoreCase("admin") && usuarios.get(i).getPassword().equalsIgnoreCase("admin1234")){
@@ -194,11 +197,11 @@ public class Lab2P2_LuisMendoza {
                                         
                                         propiedades.add(addCasa());
                                       
-                                    } else if(opcion == 2) {
+                                    } else if(opcion5 == 2) {
                                         
                                         propiedades.add(addEdificio());
                                         
-                                    } else if(opcion == 3){
+                                    } else if(opcion5 == 3){
                                         
                                         propiedades.add(addSolar());
                                         
@@ -208,53 +211,17 @@ public class Lab2P2_LuisMendoza {
                                     
                                 } else if(opcion4 == 2 && propiedades.size() > 0){
                                     
-                                    
                                     for (int i = 0; i < propiedades.size(); i++) {
                                         
-                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")    
-                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")
-                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")){
-                                            
                                         System.out.println("");
                                         System.out.println(i +".");
                                         System.out.println(propiedades.get(i));
                                         System.out.println("");
-                                            
-                                        } 
                                         
                                     }
                                     
-                                    for (int i = 0; i < propiedades.size(); i++) {
-                                        
-                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")    
-                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")
-                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")){
-                                            
-                                        System.out.println("");
-                                        System.out.println(i +".");
-                                        System.out.println(propiedades.get(i));
-                                        System.out.println("");
-                                            
-                                            
-                                        }
-                                        
-                                    } 
                                     
-                                    for (int i = 0; i < propiedades.size(); i++) {
-                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")    
-                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")
-                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")){
-                                            
-                                        System.out.println("");
-                                        System.out.println(i +".");
-                                        System.out.println(propiedades.get(i));
-                                        System.out.println("");
-                                        
-                                        }
-                                    }
-                                    
-                                    
-                                } else if(opcion4 == 3 && propiedades.size()>1){
+                                } else if(opcion4 == 3 && propiedades.size()>0){
                                     
                                     System.out.println("Elija la propiedad que desea modiciar");
                                     
@@ -463,9 +430,7 @@ public class Lab2P2_LuisMendoza {
                                 
                                 for (int i = 0; i < propiedades.size(); i++) {
                                         
-                                        int j = i + 1;
-                                        
-                                        System.out.println(j + ".");
+                                        System.out.println(i+".");
                                         System.out.println(propiedades.get(i));
                                         
                                     }
@@ -474,6 +439,7 @@ public class Lab2P2_LuisMendoza {
                                     
                                     if(propiedades.get(manejo) instanceof Casa){
                                         
+                                        System.out.println("Ingrese el nuevo estado");
                                         String estado = sc.next();
                                         estado += sc.nextLine();
                                         ((Casa)propiedades.get(manejo)).setEstado(estado);
@@ -481,6 +447,7 @@ public class Lab2P2_LuisMendoza {
                                         
                                     } else if(propiedades.get(manejo) instanceof Edificio){
                                         
+                                        System.out.println("Ingrese el nuevo estado");
                                         String estado2 = sc.next();
                                         estado2 += sc.nextLine();
                                         ((Edificio)propiedades.get(manejo)).setEstado(estado2);
@@ -488,6 +455,7 @@ public class Lab2P2_LuisMendoza {
                                         
                                     } else{
                                         
+                                        System.out.println("Ingrese el nuevo estado");
                                         String estado3 = sc.next();
                                         estado3 += sc.nextLine();
                                         ((Solar)propiedades.get(manejo)).setEstado(estado3);
@@ -516,17 +484,82 @@ public class Lab2P2_LuisMendoza {
                         
                         do{
                             
+                            System.out.println("1. Ver Lista");
+                            System.out.println("2. Comprar");
+                            System.out.println("3. Logout");
+                            
+                            int opcionUsuario = sc.nextInt();
+                            
+                            switch(opcionUsuario){
+                                
+                                case 1: 
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        System.out.println("");
+                                        System.out.println(i +".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                        
+                                    }
+                                    
+                                    
+                                    break;
+                                    
+                                case 2: 
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        System.out.println("");
+                                        System.out.println(i+".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                        
+                                    }
+                                    
+                                    int compra = sc.nextInt();
+                                    
+                                    if(propiedades.get(compra) instanceof Casa && ((Casa)propiedades.get(compra)).owner.equalsIgnoreCase("")  ){
+                                        
+                                        
+                                        ((Casa)propiedades.get(compra)).setOwner(currentUser.getNombre());
+                                        
+                                        
+                                    } else if(propiedades.get(compra) instanceof Edificio && ((Edificio)propiedades.get(compra)).owner.equalsIgnoreCase("")) {
+                                        
+                                        ((Edificio)propiedades.get(compra)).setOwner(currentUser.getNombre());
+                                        
+                                    } else if(propiedades.get(compra) instanceof Solar && ((Solar)propiedades.get(compra)).owner.equalsIgnoreCase("")) {
+                                        
+                                        ((Solar)propiedades.get(compra)).setOwner(currentUser.getNombre());
+                                    }
+                                    
+                                    break;
+                                    
+                                    
+                                case 3: 
+                                    
+                                    opcion2 = 3;
+                                    System.out.println("Hasta la vista");
+                                    
+                                    break;
+                                    
+                                default:
+                                    
+                                    System.out.println("Opcion no valida");
+                                    
+                                    break;
+                                
+                                
+                            }
+                            
                             
                         
+                        } while(opcion2 != 3);
                         
-                        } while(opcion2 != 4);
-                        
-                        
+                        opcion2 = 0;
+                        z =0;
                     }
-                    
-                    
-                    
-                
                     
                     
                     

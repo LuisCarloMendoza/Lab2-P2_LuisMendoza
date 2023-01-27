@@ -4,6 +4,8 @@
  */
 package lab.pkg2p2_luismendoza;
 
+import java.util.ArrayList;
+
 
 public class Usuario {
     
@@ -11,6 +13,8 @@ public class Usuario {
      private int edad;
      private String username;
      private String password;
+     
+     private ArrayList lista = new ArrayList();
 
     public Usuario() {
     }
@@ -53,7 +57,21 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public ArrayList getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList lista) {
+        this.lista = lista;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", edad=" + edad + ", username=" + username + ", password=" + password + ", lista=" + lista + '}';
+    }
      
+    
     
     
     
