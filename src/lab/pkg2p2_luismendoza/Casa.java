@@ -17,11 +17,12 @@ public class Casa {
     int bath;
     int cuartos;
     String estado;
+    String owner;
 
     public Casa() {
     }
 
-    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int bath, int cuartos, String estado) {
+    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int bath, int cuartos, String estado, String owner) {
         this.numeroCasa = numeroCasa;
         this.numeroBloque = numeroBloque;
         this.color = color;
@@ -30,6 +31,7 @@ public class Casa {
         this.bath = bath;
         this.cuartos = cuartos;
         this.estado = estado;
+        this.owner = owner;
     }
 
     public int getNumeroCasa() {
@@ -95,6 +97,21 @@ public class Casa {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Casa{" + "numeroCasa=" + numeroCasa + ", numeroBloque=" + numeroBloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", bath=" + bath + ", cuartos=" + cuartos + ", estado=" + estado + ", owner=" + owner + '}';
+    }
+
+    
 
     
     

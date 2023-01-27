@@ -13,14 +13,16 @@ public class Solar {
     double ancho;
     double largo;
     String estado;
+    String owner;
 
     public Solar() {
     }
 
-    public Solar(double ancho, double largo, String estado) {
+    public Solar(double ancho, double largo, String estado, String owner) {
         this.ancho = ancho;
         this.largo = largo;
         this.estado = estado;
+        this.owner = owner;
     }
 
     public double getAncho() {
@@ -46,6 +48,21 @@ public class Solar {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Solar{" + "ancho=" + ancho + ", largo=" + largo + ", estado=" + estado + ", owner=" + owner + '}';
+    }
+    
+    
     
     
     

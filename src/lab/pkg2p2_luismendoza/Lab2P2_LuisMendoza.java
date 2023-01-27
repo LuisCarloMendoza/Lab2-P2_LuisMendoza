@@ -58,7 +58,7 @@ public class Lab2P2_LuisMendoza {
         String estado = entrada.next();
         estado += entrada.nextLine();
         
-        Casa c = new Casa(numeroCasa,numeroBloque,color,ancho,largo,bath,cuartos,estado);
+        Casa c = new Casa(numeroCasa,numeroBloque,color,ancho,largo,bath,cuartos,estado,null);
         return c;
         
     }
@@ -80,7 +80,7 @@ public class Lab2P2_LuisMendoza {
         String cadena2 = entrada.next();
         cadena2 += entrada.nextLine();
         
-        Edificio e = new Edificio(pisos,locales,cadena,cadena2);
+        Edificio e = new Edificio(pisos,locales,cadena,cadena2,null);
         
         return e;
         
@@ -100,11 +100,15 @@ public class Lab2P2_LuisMendoza {
         String cadena = entrada.next();
         cadena += entrada.nextLine();
         
-        Solar s = new Solar(ancho,largo,cadena);
+        Solar s = new Solar(ancho,largo,cadena,null);
         
         return s;
         
     }
+    
+    
+    
+    
 
     
     public static void main(String[] args) {
@@ -187,25 +191,57 @@ public class Lab2P2_LuisMendoza {
                                     
                                     if(opcion5 == 1){
                                         
-                                        
-                                        
+                                        propiedades.add(addCasa());
+                                      
                                     } else if(opcion == 2) {
                                         
+                                        propiedades.add(addEdificio());
+                                        
                                     } else if(opcion == 3){
+                                        
+                                        propiedades.add(addSolar());
                                         
                                     } else{
                                         System.out.println("Opción no valida");
                                     }
                                     
+                                } else if(opcion4 == 2 && propiedades.size() > 0){
                                     
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        int j = i + 1;
+                                        
+                                        System.out.println(j + ".");
+                                        System.out.println(propiedades.get(i));
+                                        
+                                        
+                                    }
                                     
-                                    
-                                    
-                                } else if(opcion4 == 2){
                                     
                                 } else if(opcion4 == 3){
                                     
-                                } else if(opcion4 == 4){
+                                    System.out.println("");
+                                    
+                                    
+                                    
+                                    
+                                    
+                                } else if(opcion4 == 4 && propiedades.size() > 0){
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        System.out.println("");
+                                        System.out.println(i +".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                        
+                                    }
+                                    
+                                    System.out.println("Elija la propiedad que desea eliminar");
+                                    int remove = sc.nextInt();
+                                    propiedades.remove(remove);
+                                    
+                                    
                                     
                                 } else {
                                     System.out.println("Opción no valida");

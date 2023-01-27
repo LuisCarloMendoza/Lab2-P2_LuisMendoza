@@ -11,15 +11,17 @@ public class Edificio {
     int locales;
     String direccion;
     String estado;
+    String owner;
 
     public Edificio() {
     }
 
-    public Edificio(int pisos, int locales, String direccion, String estado) {
+    public Edificio(int pisos, int locales, String direccion, String estado, String owner) {
         this.pisos = pisos;
         this.locales = locales;
         this.direccion = direccion;
         this.estado = estado;
+        this.owner = owner;
     }
 
     public int getPisos() {
@@ -53,6 +55,21 @@ public class Edificio {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Edificio{" + "pisos=" + pisos + ", locales=" + locales + ", direccion=" + direccion + ", estado=" + estado + ", owner=" + owner + '}';
+    }
+
+    
     
 
     
