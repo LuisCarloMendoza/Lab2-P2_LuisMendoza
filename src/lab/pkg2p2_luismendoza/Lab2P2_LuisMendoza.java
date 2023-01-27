@@ -7,6 +7,7 @@ package lab.pkg2p2_luismendoza;
 import java.awt.Color;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JColorChooser;
 
 public class Lab2P2_LuisMendoza {
@@ -207,14 +208,49 @@ public class Lab2P2_LuisMendoza {
                                     
                                 } else if(opcion4 == 2 && propiedades.size() > 0){
                                     
+                                    
                                     for (int i = 0; i < propiedades.size(); i++) {
                                         
-                                        int j = i + 1;
-                                        
-                                        System.out.println(j + ".");
+                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")    
+                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")
+                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Lista")){
+                                            
+                                        System.out.println("");
+                                        System.out.println(i +".");
                                         System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                            
+                                        } 
                                         
+                                    }
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
                                         
+                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")    
+                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")
+                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Construccion")){
+                                            
+                                        System.out.println("");
+                                        System.out.println(i +".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                            
+                                            
+                                        }
+                                        
+                                    } 
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        if(((Casa)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")    
+                                             || ((Edificio)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")
+                                                || ((Solar)propiedades.get(i)).getEstado().equalsIgnoreCase("Baldio")){
+                                            
+                                        System.out.println("");
+                                        System.out.println(i +".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                        
+                                        }
                                     }
                                     
                                     
@@ -397,9 +433,6 @@ public class Lab2P2_LuisMendoza {
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                 } else if(opcion4 == 4 && propiedades.size() > 0){
                                     
                                     for (int i = 0; i < propiedades.size(); i++) {
@@ -426,7 +459,42 @@ public class Lab2P2_LuisMendoza {
                                 
                                  
                                 
-                            } else if(opcion3 == 2) {
+                            } else if(opcion3 == 2 && propiedades.size()>0) {
+                                
+                                for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        int j = i + 1;
+                                        
+                                        System.out.println(j + ".");
+                                        System.out.println(propiedades.get(i));
+                                        
+                                    }
+                                
+                                    int manejo = sc.nextInt();
+                                    
+                                    if(propiedades.get(manejo) instanceof Casa){
+                                        
+                                        String estado = sc.next();
+                                        estado += sc.nextLine();
+                                        ((Casa)propiedades.get(manejo)).setEstado(estado);
+                                        
+                                        
+                                    } else if(propiedades.get(manejo) instanceof Edificio){
+                                        
+                                        String estado2 = sc.next();
+                                        estado2 += sc.nextLine();
+                                        ((Edificio)propiedades.get(manejo)).setEstado(estado2);
+                                        
+                                        
+                                    } else{
+                                        
+                                        String estado3 = sc.next();
+                                        estado3 += sc.nextLine();
+                                        ((Solar)propiedades.get(manejo)).setEstado(estado3);
+                                        
+                                    }
+                                
+                                
                                 
                             } else if(opcion3 == 3){
                                 
