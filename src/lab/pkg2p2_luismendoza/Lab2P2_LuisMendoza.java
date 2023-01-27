@@ -218,9 +218,183 @@ public class Lab2P2_LuisMendoza {
                                     }
                                     
                                     
-                                } else if(opcion4 == 3){
+                                } else if(opcion4 == 3 && propiedades.size()>1){
                                     
-                                    System.out.println("");
+                                    System.out.println("Elija la propiedad que desea modiciar");
+                                    
+                                    for (int i = 0; i < propiedades.size(); i++) {
+                                        
+                                        System.out.println("");
+                                        System.out.println(i +".");
+                                        System.out.println(propiedades.get(i));
+                                        System.out.println("");
+                                        
+                                    }
+                                    
+                                    int modificar = sc.nextInt();
+                                    
+                                    if(propiedades.get(modificar) instanceof Casa){
+                                        
+                                        System.out.println("1. Modificar el numero de casa");
+                                        System.out.println("2. Modificar el bloque");
+                                        System.out.println("3. Modificar el Color");
+                                        System.out.println("4. Modificar el ancho");
+                                        System.out.println("5. Modificar el largo");
+                                        System.out.println("6. Modificar baños");
+                                        System.out.println("7. Modificar cuartos");
+                                        
+                                        int modificar2 = sc.nextInt();
+                                        
+                                        switch(modificar2){
+                                            
+                                            case 1: 
+                                                
+                                                System.out.println("Ingrese el numero de casa");
+                                                int mod1 = sc.nextInt();
+                                                ((Casa)propiedades.get(modificar)).setNumeroCasa(mod1);
+                                                
+                                                break;
+                                            
+                                            case 2:
+                                                
+                                                System.out.println("Ingrese el numero de bloque");
+                                                int mod2 = sc.nextInt();
+                                                ((Casa)propiedades.get(modificar)).setNumeroBloque(mod2);
+                                                
+                                                break;
+                                                
+                                            case 3: 
+                                                
+                                                System.out.println("Ingrese el Color");
+                                                Color mod3 = JColorChooser.showDialog(null, "Elija un color", Color.yellow);
+                                                ((Casa)propiedades.get(modificar)).setColor(mod3);
+                                                
+                                                break;
+                                                
+                                            case 4: 
+                                                
+                                                System.out.println("Ingrese el ancho");
+                                                double mod4 = sc.nextDouble();
+                                                ((Casa)propiedades.get(modificar)).setAncho(mod4);
+                                                
+                                                break;
+                                                
+                                            case 5:
+                                                
+                                                System.out.println("Ingrese el largo");
+                                                double mod5 = sc.nextDouble();
+                                                ((Casa)propiedades.get(modificar)).setLargo(mod5);
+                                                
+                                                break;
+                                                
+                                                
+                                            case 6:
+                                                
+                                                System.out.println("Ingrese la cantidad de baños");
+                                                int mod6 = sc.nextInt();
+                                                ((Casa)propiedades.get(modificar)).setBath(mod6);
+                                                
+                                                break;
+                                                
+                                            case 7:
+                                                
+                                                System.out.println("Ingrese la cantidad de cuartos");
+                                                int mod7 = sc.nextInt();
+                                                ((Casa)propiedades.get(modificar)).setCuartos(mod7);
+                                                
+                                                
+                                                break;
+                                                
+                                            default:
+                                                
+                                                System.out.println("Opción no valida");
+                                                
+                                                break;
+                                        }
+                                        
+                                        
+                                    } else if(propiedades.get(modificar) instanceof Edificio){
+                                        
+                                        System.out.println("1. Modificar pisos");
+                                        System.out.println("2. Modificar locales");
+                                        System.out.println("3. Modiciar Dirección");
+                                        
+                                        int modificar3 = sc.nextInt();
+                                        
+                                        switch(modificar3){
+                                            
+                                            case 1:
+                                                
+                                                System.out.println("Ingrese la cantidad de pisos");
+                                                int mod8 = sc.nextInt();
+                                                ((Edificio)propiedades.get(modificar)).setPisos(mod8);
+                                                
+                                                break;
+                                                
+                                            case 2:
+                                                
+                                                System.out.println("Ingrese la cantidad de locales");
+                                                int mod9 = sc.nextInt();
+                                                ((Edificio)propiedades.get(modificar)).setLocales(mod9);
+                                                
+                                                break;
+                                                
+                                                
+                                            case 3: 
+                                                
+                                                System.out.println("Ingrese la dirección");
+                                                String mod10 = sc.next();
+                                                mod10 += sc.nextLine();
+                                                ((Edificio)propiedades.get(modificar)).setDireccion(mod10);
+                                                
+                                                break;
+                                                
+                                            default:
+                                                
+                                                System.out.println("Opción no valida");
+                                                
+                                                break;
+                                                
+                                            
+                                        }
+                                        
+                                        
+                                    } else{
+                                        
+                                        System.out.println("1. Ancho");
+                                        System.out.println("2. Largo");
+                                        
+                                        int modificar4 = sc.nextInt();
+                                        
+                                        switch(modificar4){
+                                            
+                                            case 1: 
+                                                
+                                                System.out.println("Ingrese el ancho");
+                                                double mod11= sc.nextDouble();
+                                                ((Solar)propiedades.get(modificar)).setAncho(mod11);
+                                                
+                                                break;
+                                           
+                                            case 2: 
+                                                
+                                                System.out.println("Ingrese el largo");
+                                                double mod12= sc.nextDouble();
+                                                ((Solar)propiedades.get(modificar)).setAncho(mod12);
+                                                
+                                                break;
+                                                
+                                            default:
+                                                
+                                                System.out.println("Opción no valida");
+                                                
+                                                break;
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    
                                     
                                     
                                     
