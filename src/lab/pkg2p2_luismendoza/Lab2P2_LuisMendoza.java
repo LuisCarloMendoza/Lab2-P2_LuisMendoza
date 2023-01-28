@@ -12,6 +12,13 @@ import javax.swing.JColorChooser;
 
 public class Lab2P2_LuisMendoza {
     
+    public static double area(double ancho, double largo){
+        double a = ancho * largo;
+                
+                return a;
+    }
+    
+    
     public static Usuario addUsuario(){
         
         Scanner sc = new Scanner(System.in);
@@ -546,7 +553,6 @@ public class Lab2P2_LuisMendoza {
                                     System.out.println("Opcion no valida");
                                     
                                     break;
-                                
                                 
                             }
                             
