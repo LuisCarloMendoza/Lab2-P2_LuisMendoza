@@ -13,8 +13,7 @@ public class Usuario {
      private int edad;
      private String username;
      private String password;
-     
-     private ArrayList lista = new ArrayList();
+    
 
     public Usuario() {
     }
@@ -58,17 +57,12 @@ public class Usuario {
         this.password = password;
     }
 
-    public ArrayList getLista() {
-        return lista;
-    }
-
-    public void setLista(ArrayList lista) {
-        this.lista = lista;
-    }
+    
+    
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", edad=" + edad + ", username=" + username + ", password=" + password + ", lista=" + lista + '}';
+        return "Usuario{" + "nombre=" + nombre + ", edad=" + edad + ", username=" + username + ", password=" + password + '}';
     }
      
     
